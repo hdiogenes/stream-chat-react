@@ -13,7 +13,9 @@ import {
   useMessageContext,
 } from 'stream-chat-react';
 
-import './CustomMessage.scss';
+import { CustomActions } from './CustomActions';
+
+import './CustomMessage.css';
 
 export const CustomMessage = () => {
   const {
@@ -42,6 +44,7 @@ export const CustomMessage = () => {
           <ReactionSelector ref={reactionSelectorRef} />
         )}
         <MessageText />
+        <CustomActions />
         <MessageStatus />
         {message.attachments && <Attachment attachments={message.attachments} />}
         {hasReactions && !showDetailedReactions && isReactionEnabled && <SimpleReactionsList />}
